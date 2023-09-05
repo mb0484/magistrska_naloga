@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: python manage.py run -h 0.0.0.0
+    ports:
+      - 127.0.0.1:5000:5000
+    environment:
+      - FLASK_APP=postavljalec_vejic/__init__.py
+      - FLASK_ENV=production
+      - DATABASE_URL=postgresql://vejicar:testpass123@db:5432/vejicar
+      - SQL_HOST=db
+      - SQL_PORT=5432
+      - DATABASE=postgres
+    depends_on:
+      - db
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - /opt/vejicar/db:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=vejicar
+      - POSTGRES_PASSWORD=testpass123
+      - POSTGRES_DB=vejicar

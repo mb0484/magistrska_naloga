@@ -1,0 +1,168 @@
+$font-headers: serif;
+ $font-text: 'Nitti Grotesk', sans-serif;
+ 
+ $primary-color: #373E4A;
+ $primary-color-dark: #373E4A;
+ $primary-color-light: #56606F;
+ $primary-color-darker: #2F353F;
+ 
+ 
+ $text-color: #333333;
+ $background: #f7f7f7;
+ $grey-button: #f7f7f7;
+ $grey-hover: #f7f7f7;
+ $grey-text: #969696;
+ $grey-border: #f0f0f0; 
+ $grey-icon-or-filtered: #d6d6d6;
+ $grey-text-2: #AFAFAF;
+ 
+ $white-btn-hover: #f8f8f8;
+
+$shadow-lvl1: 0 0 2rem 0 rgba(230,230,230,100);
+ $shadow-lvl2: 0 0.1rem 1rem 0 rgba(0,0,0,0.24);
+ $shadow-lvl3: 0 0.5rem 1rem 0 rgba(0,0,0,0.15);
+ $shadow-hover: 0 0 1rem 0 rgba(0,0,0,0.35);
+ $shadow-btn: 0rem 0.1rem 0.4rem rgba(0,0,0,0.24);
+
+ $uni-black: #333333;
+ $uni-black-lighter: #4d4d4d;
+ 
+ 
+ 
+ $orange: #FF6E45;
+ $green-dark: #23B353;
+ $green-dark-hover:#29cc5f;
+ 
+ 
+ $green: #23B353;
+ 
+ $red: #e12a26;
+ $red-btn-top: #ff4242;
+ $red-btn-bottom: #f03737;
+ $red-btn-border: #e33434;
+ //$blue: #2483b3;
+ $blue: #4A90E2;
+ $blue-dark: #2996cc;
+ //???
+ $grey-dark: #373E4A;
+ $grey-darker: #2F353F;
+ $shadow: rgba(0,0,0,0.35);
+ 
+ $black-btn-top: #404040;
+ $black-btn-bottom: #333333;
+ $black-btn-border: #404040;
+
+.module {
+    background: white;
+    border-radius: 0.4rem;
+    -webkit-box-shadow: $shadow-lvl1;
+    -moz-box-shadow: $shadow-lvl1;
+    box-shadow: $shadow-lvl1;
+  
+    .module-header {
+      border-bottom: 1px solid $grey-border;
+      padding: 0 1.6rem;
+    }
+    .module-body {
+      -webkit-column-rule: 1px solid $grey-border; /* Chrome, Safari, Opera */
+      -moz-column-rule: 1px solid $grey-border; /* Firefox */
+      column-rule: 1px solid $grey-border;
+  
+      column-fill:auto;
+      -moz-column-fill: auto;
+  
+      padding: 1.6rem 1.6rem 2.4rem 1.6rem;
+      &.near {
+        border-top: 1px solid $grey-border;
+        background: $grey-hover;
+        .synonym:hover{
+          background: white;
+        }
+      }
+  
+    }
+    .module-footer {
+      border-top: 1px solid $grey-border;
+      padding: 2.3rem 4rem;
+      font-size: 1.6rem;
+      color: $grey-text;
+      p {
+        display: inline-block;
+      }
+      .info {
+        float:right;
+      }
+    }
+}
+
+footer {
+    background: $uni-black;
+    color: white;
+    margin-top: 2rem !important;
+    padding: 0;
+    padding-bottom: 4.7rem !important;
+    font-size: 0.8rem;
+    .pure-g > div {
+      padding: 0;
+      padding-top: 3.0rem;
+      padding-left: 1.6rem;
+    }
+    .left-border {
+      border-left: 1px solid #444;
+    }
+    .uni-logo {
+      text-align: center;
+      img {width: 60%;}
+    }
+    .cc-block {
+      i.fa {
+        margin-top: 1.6rem;
+        font-size: 4.5rem;
+      }
+    }
+    h5 {
+      font-size: 0.78rem;
+      font-weight: bold;
+      padding-bottom:1.6rem;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.3s ease-out;
+      &:hover {
+        opacity: 0.65;
+        text-decoration: none;
+        color: white;
+      }
+    }
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 0.5rem !important;
+    font-size: 1.0rem !important;
+    position: relative;
+    top: 0.25rem;
+}
+
+@media (min-width: 1190px) {
+    .pure-g {
+      max-width: 1140px;
+      margin: 0 auto;
+      }
+    }

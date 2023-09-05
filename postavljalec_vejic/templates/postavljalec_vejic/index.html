@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block title %}Homes{% endblock %}
+
+{% block body %}
+<div class="my-container">
+  <div class="posts">
+    <form method="post">
+      <div class="post-container">
+        <div class="bx--row">
+          <div class="bx--col-lg bx--col-md bx--col-sm-16">
+            <div class="form-group">
+              <div class="textAreaContainer borderOnFocusWithin">
+                <textarea class="form-control" id="post" name="body" rows="6" placeholder="Prilepi ali vnesi besedilo" onkeyup="updateLength();" maxlength="3000" required>{{ originPoved }}</textarea>
+                <!--<a onclick="clearText()" class="close"></a>-->
+                <img onclick="clearText()" class="close" src="static/assets/close.svg" alt="Delete text">
+                <p class="countCharactersText" id="charactersCount">0/3000</p>
+              </div>
+            </div>
+            <a id="vstaviVzorcnoBesediloBtn" onclick="vstaviVzorcnoBesedilo()" class="makeActionButton">Vstavi vzorčno besedilo</a>
+          </div>
+          <div class="bx--col-lg-1 bx--col-md-1 bx--col-sm-16">  
+            <div class="form-group">
+              <div class="d-flex justify-content-center">
+                <button onclick="postaviVejice()" class="circle-button submit-btn" id="markTextBtn" type="submit">
+                  <img class="postavi-vejice-btn" src="static/assets/arrow_right.svg" alt="submit" />
+                </button>
+                <div class="vertical-line-gray"></div>
+              </div>
+            </div>
+          </div>
+          <div class="bx--col-lg bx--col-md bx--col-sm-16">    
+            <div class="form-group">
+              <div class="textAreaContainer borderOnFocusWithin">
+                <div id="markedTextField" class="form-control contentEditableTextArea" contenteditable="false">{{ poved }}</div>
+                <img id="likeButton" class="likeDislikeButton" onclick="likeCurrentMarkedText({{insertedRowId}})" src="static/assets/thumbs-up.svg" alt="Like marked text">
+                <img id="dislikeButton" class="likeDislikeButton" onclick="dislikeCurrentMarkedText({{insertedRowId}})" style="left: 64px" src="static/assets/thumbs-down.svg" alt="Dislike marked text">
+
+                <a id="potrdiBtn" onclick="confirmMarkedTextEdit()" class="potrdiButton" style="visibility: hidden;">Potrdi</a>
+                <a id="cancelBtn" onclick="cancelMarkedTextEdit()" style="right: 3.0rem; visibility: hidden;" class="potrdiButton">Prekliči</a>
+                <img id="editTextBtn" title="Uredi" onclick="editMarkedText()" class="actionBtn" src="static/assets/edit.svg" alt="Edit marked text button">
+                <img id="copyTextBtn" title="Kopiraj" onclick="copyMarkedText()" class="actionBtn" style="right: 56px;" src="static/assets/copy.svg" alt="Copy marked text button">
+              </div>
+            </div>
+            <a id="sendFeedbackInformationBtn" href = "mailto: info@cjvt.si" class="makeActionButton">Pošlji povratne informacije</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add the checkbox at the bottom of the page -->
+      <div class="bx--row">
+        <div class="bx--col-lg bx--col-md bx--col-sm-16">
+          <div class="form-group">
+            <input type="checkbox" id="sklanjaj" name="sklanjaj" {{ "checked" if sklanjajBesede else "" }}>
+            <label for="sklanjaj">Preveri tudi besedne oblike</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="wo" name="wo" {{ "checked" if wrstniRedBesed else "" }}>
+            <label for="wo">Preveri tudi besedni red (če bo izbrano, bo model popravil samo besedni red)</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="names" name="names" {{ "checked" if notCorrectNames else "" }}>
+            <label for="names">Ne preverjaj lastnih imen</label>
+          </div>
+        </div>
+
+        <div class="bx--col-lg bx--col-md bx--col-sm-16">
+          <br/>
+          <label>Legenda:</label>
+          <br/><br/>
+          <mark class='sklanjanaBeseda'>Oblikoslovni popravek.</mark>
+          <br/><br/>
+          <mark class='markPopravljenaCrkovnaNapaka'>Črkovalni popravek.</mark>
+          <br/><br/>
+          <mark class='markNePopravljenaCrkovnaNapaka'>S črkovalnikom nepopravljena napaka.</mark>
+          <br/><br/>
+          <mark class='markVejicaPrejJaZdejNe'>Dodana vejica.</mark>
+          <br/><br/>
+          <mark class='markVejicaPrejNeZdejJa'>Odstranjena vejica.</mark>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <center>
+    <div id="copySuccessful" class="copySuccesfulContainer">
+      Kopiranje končano!
+    </div>
+  </center>
+</div>
+
+
+{% endblock %}
+

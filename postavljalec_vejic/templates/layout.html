@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="vejice,CJVT vejice">
+    <meta name="description" content="Vejice 2.0 - Orodje za strojno postavljanje vejic" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:url" id="meta-fb-url" content="" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title" content="CJVT | Vejice 2.0" />
+    <meta property="og:description" id="meta-fb-description" content="Postavljalec vejic" />
+    <meta property="og:image" content="static/assets/fb_share.png" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+
+    <link rel="stylesheet" href="static/footer-stari2.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/carbon-components/css/carbon-components.min.css"  rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+    <script type='text/javascript' src="static/myFunctions.js"></script>
+    <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
+
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/about-stari.css">
+    <!--<link rel="stylesheet" href="static/footer.css">-->
+    <link rel="hypertext" href="templates/footer.html">
+    <link rel="stylesheet" href="static/fonts/NittiGrotesk/stylesheet.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="faviconfavicon.svg">
+    <!-- generics -->
+    <link rel="icon" href="favicon/32x32-8.png" sizes="32x32">
+    <link rel="icon" href="favicon/128x128-8.png" sizes="128x128">
+    <link rel="icon" href="favicon/192x192-8.png" sizes="192x192">
+    <link rel="icon" href="favicon/196x196-8.png" sizes="196x196">
+
+    <!-- Android -->
+    <link rel="shortcut icon" sizes="196x196" href="favicon/196x196-8.png">
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="favicon/152x152-8.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="favicon/180x180-8.png" sizes="180x180">
+
+    <!-- Windows 8 IE 10-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="favicon/128x128-8.png">
+
+    <title id="pageTitle">Slovnični popravljalnik</title>
+  </head>
+  <body onload="manageOnPageLoad()">
+    <div id="wholeView">
+      <div class="d-flex justify-content-between flex-column flex-md-row align-items-center px-md-4 border-bottom box-shadow primary-navbar bg-red">
+        <div class="pages">
+          <!--<a href="home"><img class="logo" src="static/assets/CJVT_Vejice_WHITE_1.1-01.svg" alt="CJVT Vejice logo"></a>-->
+          <a class="homeButton navigationButtons" href="home">Slovnični popravljalnik</a>
+        </div>
+        <div class="">
+          <nav class="pages">
+            <a id="aboutNavTitle" class="navigationButtons" href="#">O viru</a>
+            <a id="changeLanguageNavTitle" class="navigationButtons" href="#" onclick="changePageTranslation()">English</a>
+          </nav>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow secondary-navbar">
+        <div class="ml-auto">
+          <nav class="icons">
+            <img class="icon-item" src="static/assets/switcher.svg" alt="Switcher logo">
+            <img id="share-fb" class="icon-item" src="static/assets/logo_facebook.svg" alt="Share facebook logo">
+            <img class="icon-item" src="static/assets/logo_twitter.svg" alt="Share twitter logo" onclick="openTwitter()">
+          </nav>
+        </div>
+      </div>
+      <div class="bx--grid">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+  </body>
+  <footer id="footerView">
+    {% include 'footer.html' %}
+    {% block footer %}{% endblock %}
+  </footer>
+  <!--legal notice window-->
+  <div id = "confirm">
+    <div class="pure-g">
+      <div class="pure-u-1-1 u-padding-top-half">
+        <div class="panel big-panel" style="margin-bottom: 0px !important;">
+          <div class="pure-g">
+            <div class="pure-u-5-6">
+                <h3 id="alertMessageTitle" style="padding: 0 2rem;">Vejice 2.0 Automated comma placement tool  
+                </h3>
+            </div>
+          </div>
+          <p id="alertMessage">
+              <!--<strong>TERMS OF USE</strong>
+              <br/>
+              <br/>
+              The application Vejice 2.0 (Automated comma placement tool) which is publicly accessible at: <a href="https://orodja.cjvt.si/vejice/home">https://orodja.cjvt.si/vejice/home</a> is operated by Centre for Language Resources and Technologies at the University of Ljubljana, Faculty of Computer and Information Science, Večna pot 113, 1000 Ljubljana, Slovenia  (hereinafter: CJVT). 
+              Users may upload any text of their choice into the empty frame and click on the marked button. By clicking the button users initiate the tool to start its operation. The result of this procedure will be a text marked with suggestions for proper comma usage. 
+              The application Vejice 2.0 (Automated comma placement tool) is conceived as a help tool for comma usage and is not a substitute for a grammar, spelling, proofreading or language editing. CJVT is not responsible for any mistakes or irregularities, which are suggested by the tool and shall not be liable in any way for damages arising from or cost incurred by the incorrect suggestions, which are the consequence of automatic processing of the texts uploaded into the tool.
+              <br/>
+              <br/>
+              <strong>DATA PROCESSING CONSENT</strong>
+              <br/>
+              <br/>
+              Users of Vejice 2.0 (Automated comma placement tool) upload the texts into the tool voluntarily and understand and consent to processing and retention of such texts by CVTJ. CVTJ shall process and retain such texts solely for the purposes of statistical and linguistic analysis of the tool operation and for development and upgrades of methodology or operation model of the tool.
+              By uploading the texts containing any personal data into the tool, users consent to retention and processing of such personal data, which shall only be used for analysis and further development of the tool. 
+              Users who do not allow such retention and processing of personal data for the purposes of analysis and further development of the tool, shall remove any such data from the texts before uploading the texts into the tool.
+              The texts uploaded into the tool by users shall only be available to CVTJ and to developers of the tool and shall not be transmitted to any third party and shall not be made available to the public.
+              CVTJ may process and retain texts uploaded into the tool by users for up to 3 years from the moment of upload. After such period expires, CVTJ shall permanently delete all such texts.
+              <br/>-->
+          </p>
+          <div class="pure-g">
+              <div class="pure-u-5-6">
+                  <!--<button style="margin: 0 2rem;" class = "yes">OK</button>-->
+                  <a id="alertMessageButton" class="btn-red agreeLink" style="height: 3.0rem; line-height: 2.9rem;">Agree to terms</a>
+                  <a id="alertMessageTranslate" class="translateLegalNotice">Slovenščina</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
