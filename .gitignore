@@ -12,9 +12,6 @@ correct_words_shape_model/
 predict_masks_model/
 general_model_jul_19/
 
-root_lemma_dict.pkl
-sloleks_root_dict.pkl
-
 .DS_Store
 crkovalnikv/
 general_model_24_jul/

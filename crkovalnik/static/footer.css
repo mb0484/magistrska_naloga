@@ -1,0 +1,171 @@
+body {
+  background: #f5f5f5;
+}
+body.dark-theme {
+  background: #292929;
+  color: white;
+}
+
+p, span {
+  font-size: 1rem;
+}
+
+a {
+  color: #161616;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 1.2857;
+  letter-spacing: 0.16px;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+.text-red {
+  color: #e12a26;
+}
+
+.text-grey {
+  color: #666666;
+}
+
+.weight-normal {
+  font-weight: normal;
+}
+
+.weight-semi-bold {
+  font-weight: 600;
+}
+
+.bg-red {
+  background: #e12a26;
+}
+
+.bg-white {
+  background: white;
+}
+
+.carbon-icon {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.carbon-icon img {
+  width: 100%;
+}
+
+.tooltip {
+  position: relative;
+}
+.tooltip:hover::after {
+  display: inline-block;
+  opacity: 1;
+}
+
+.tooltip::after {
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  border-radius: 2px;
+  content: attr(data-tooltiptext);
+  position: absolute;
+  bottom: -1.5rem;
+  color: #ffffff;
+  background: #161616;
+  padding: 0.2rem;
+  white-space: nowrap;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.shadow-lvl1 {
+  box-shadow: 0 1px 1px 0 #e0e0e0;
+}
+
+.viri-btn {
+  position: absolute;
+  right: -4rem;
+  top: 0;
+  background: #161616;
+  width: 3rem;
+  height: 3rem;
+  color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.viri-btn:active {
+  background: #292929;
+}
+.viri-btn:hover {
+  background: #212121;
+}
+
+footer {
+  background: #161616;
+  height: 90rem;
+  margin-top: 2rem;
+}
+footer .right-side-contact {
+  border-left: 1px solid #666666;
+}
+footer .footer-col-content {
+  position: relative;
+  padding-left: 1.5rem;
+  height: 12rem;
+  border-left: 1px solid #666666;
+}
+footer .footer-col-content h5 {
+  padding-top: 1.5rem;
+  color: #b3b3b3;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.33;
+  letter-spacing: 0.32px;
+}
+footer .footer-col-content p, footer .footer-col-content a {
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.33;
+  letter-spacing: 0.32px;
+}
+footer .footer-col-content img {
+  width: 100%;
+}
+footer .to-bottom {
+  position: absolute;
+  bottom: 0;
+}
+footer .to-bottom.ft-cjvt-logo {
+  bottom: -4.5%;
+}
+
+/* Change on medium or bigger screens */
+@media (min-width: 768px) {
+  footer {
+    height: 22rem;
+  }
+  footer .right-side-contact {
+    border-left: 0px;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */
